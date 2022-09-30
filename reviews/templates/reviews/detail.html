@@ -11,7 +11,9 @@
 <body>
   <h1>{{review.title}}</h1>
   <p>{{review.content}}</p>
-  <a href='#'>목록으로 돌아가기</a>
+  <a href="{% url 'index' %}">목록으로 돌아가기</a>
+  <a href="{% url 'edit' review.id %}">수정하기</a>
+  <a href="{% url 'delete' review.id %}">삭제하기</a>
 </body>
 
 </html>

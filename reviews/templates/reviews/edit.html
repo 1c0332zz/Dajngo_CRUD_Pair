@@ -1,0 +1,18 @@
+{% extends './base.html' %}
+
+{% block content%}
+<div class="m-5">
+  <form action="{% url 'update' review.id %}">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">제목</label>
+      <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{review.title}}">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+      <textarea class="form-control" name="content" id="exampleFormControlTextarea1"
+        rows="3">{{review.content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-info">수정하기</button>
+  </form>
+</div>
+{% endblock content%}
