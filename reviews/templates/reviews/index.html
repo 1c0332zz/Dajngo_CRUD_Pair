@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+
+{% block content%}
+<h1> 베이스템플릿 상속 </h1>
+<a href="{% url 'create' %}">리뷰쓰기</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">리뷰 번호</th>
+      <th scope="col">리뷰 제목</th>
+      <th scope="col">작성 시간</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for review in reviews %}
+    <tr>
+      <td>{{ review.id }}</td>
+      <td><a href="{% url 'detail' review.id %}">{{ review.title }}</a></td>
+      <td>{{ review.created_at| date:'M-j-D, H:i'}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content%}

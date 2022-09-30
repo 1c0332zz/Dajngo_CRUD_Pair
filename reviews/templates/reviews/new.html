@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+
+{% block content%}
+<div class="m-5">
+  <form action="{% url 'create' %}">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">제목</label>
+      <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="제목을 작성하세요">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+      <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-info">작성하기</button>
+  </form>
+</div>
+{% endblock content%}
