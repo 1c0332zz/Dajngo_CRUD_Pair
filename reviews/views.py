@@ -36,6 +36,7 @@ def edit(request, review_id):
 
 def update(request, review_id):
     review = Review.objects.get(id=review_id)
+    
     title = request.GET.get("title")
     content = request.GET.get("content")
 
